@@ -1,0 +1,31 @@
+---
+    const title = "Welcome to My Blog";
+    const subtitle = "A simple blog built with Astro";
+    const desktopImage = "https://placehold.co/1920x1080";
+    const mobileImage = "https://placehold.co/768x500";
+    const videoUrl = "https://example.com/video.mp4"; // Replace with your video URL
+    ---
+
+    <div class="relative h-screen">
+      <video
+        autoplay
+        loop
+        muted
+        playsinline
+        class="absolute w-full h-full object-cover hidden lg:block"
+        poster={desktopImage}
+      >
+        <source src={videoUrl} type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+      <img
+        src={mobileImage}
+        alt="Hero Image"
+        class="absolute w-full h-full object-cover lg:hidden"
+      />
+      <div class="absolute inset-0 bg-black opacity-50"></div>
+      <div class="relative z-10 flex flex-col justify-center items-center h-full text-white">
+        <h1 class="text-4xl font-bold mb-4">{title}</h1>
+        <p class="text-lg">{subtitle}</p>
+      </div>
+    </div>

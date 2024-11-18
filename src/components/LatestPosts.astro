@@ -3,30 +3,38 @@
       {
         title: 'Typography in Astro Blog',
         link: '/posts/post-1',
-        excerpt: 'This post demonstrates various typography elements that you can style using Tailwind CSS.',
+        excerpt: 'This post demonstrates various typography elements...',
         image: 'https://placehold.co/600x400',
+        category: 'Astro',
+        readingTime: '5 min',
       },
       {
         title: 'Advanced Typography',
         link: '/posts/post-2',
-        excerpt: 'This post explores more advanced typography elements and how to style them.',
+        excerpt: 'This post explores more advanced typography elements...',
         image: 'https://placehold.co/600x400',
+        category: 'CSS',
+        readingTime: '3 min',
       },
     ];
     ---
 
     <div class="latest-posts">
-      <h2 class="text-xl font-bold mb-4">Latest Posts</h2>
-      <ul class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <h2 class="text-2xl font-bold mb-4 text-gray-800">Latest Posts</h2>
+      <ul class="grid grid-cols-1 md:grid-cols-2 gap-6">
         {posts.map((post) => (
-          <li key={post.link} class="bg-white rounded-lg shadow-md overflow-hidden">
+          <li key={post.link} class="bg-white rounded-lg shadow-lg overflow-hidden">
             <img src={post.image} alt={post.title} class="w-full h-48 object-cover" />
-            <div class="p-4">
-              <a href={post.link} class="text-lg font-semibold text-blue-600 hover:underline">
+            <div class="p-6">
+              <a href={post.link} class="text-xl font-semibold text-blue-600 hover:underline">
                 {post.title}
               </a>
-              <p class="mt-2 text-gray-600">{post.excerpt}</p>
-              <a href={post.link} class="mt-2 inline-block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Read More</a>
+              <p class="mt-4 text-gray-600">{post.excerpt}</p>
+              <div class="mt-4 text-gray-500 flex justify-between items-center">
+                <span>{post.category}</span>
+                <span>{post.readingTime}</span>
+              </div>
+              <a href={post.link} class="mt-6 inline-block bg-blue-500 text-white px-6 py-3 rounded-md hover:bg-blue-600 transition duration-300">Read More</a>
             </div>
           </li>
         ))}

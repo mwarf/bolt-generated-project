@@ -1,10 +1,15 @@
 ---
     import Layout from '../../layouts/Layout.astro';
     const image = 'https://placehold.co/800x600';
+    const category = 'Astro';
+    const readingTime = '5 min';
     ---
 
     <Layout>
-      <img src={image} alt="Blog Post Image" class="w-full h-64 object-cover mb-4" />
-      <h2 class="text-2xl font-bold mb-4">Typography in Astro Blog</h2>
-      {/* ... rest of the content ... */}
+      {/* ... */}
+      <div class="mb-4 text-gray-600 flex justify-between">
+        <span>{category}</span>
+        <span>{readingTime}</span>
+      </div>
+      {/* ... */}
     </Layout>
